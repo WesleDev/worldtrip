@@ -1,13 +1,18 @@
 import { Flex, Heading } from "@chakra-ui/react";
 
-export default function ContinentBanner() {
+interface ContinentBannerProps {
+  image: string;
+  name: string;
+}
+
+export default function ContinentBanner({ image, name }: ContinentBannerProps) {
   return (
     <Flex
       w="100%"
       h={["150px", "300px", "500px"]}
       px={["0", "0", "36"]}
       pt={["0", "0", "72"]}
-      bgImage="url('/bannereu.png')"
+      bgImage={`url(${image})`}
       bgPosition="center"
       bgRepeat="no-repeat"
       bgSize="cover"
@@ -20,7 +25,7 @@ export default function ContinentBanner() {
         color="gray.100"
         fontWeight="500"
       >
-        Europa
+        {name}
       </Heading>
     </Flex>
   );
