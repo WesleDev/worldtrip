@@ -5,8 +5,10 @@ import Categories from "../components/Categories";
 import Header from "../components/Header";
 import Separator from "../components/Separator";
 import Slider from "../components/Slider";
+import db from '../../db.json';
 
 export default function Home() {
+  const { continents } = db;
   return (
     <Flex direction="column">
       <Header />
@@ -24,7 +26,7 @@ export default function Home() {
         <br />
         Então escolha seu continente
       </Heading>
-      <Slider />
+      <Slider continents={continents} />
     </Flex>
   );
 }
